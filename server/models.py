@@ -87,6 +87,8 @@ class Task(db.Model):
         cascade="all, delete-orphan"
     )
 
+    user = db.relationship("User", backref="posted_tasks", lazy='joined')
+
     def to_dict(self):
         return {
             "id": self.id,
@@ -102,6 +104,7 @@ class Task(db.Model):
             "created_at": self.created_at.isoformat() if self.created_at else None,
             "updated_at": self.updated_at.isoformat() if self.updated_at else None,
             "ngo_name": self.ngo.name if self.ngo else None,
+            "user_name": self.user.name if self.user else None,
         }
 
 

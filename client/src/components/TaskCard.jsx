@@ -9,7 +9,7 @@ export default function TaskCard({ task, onView }) {
       <div className="task-header">
         <h3 className="task-title">{task.title}</h3>
         <div className="task-meta">
-          <span className="task-ngo">NGO: {task.ngo.name}</span>
+          <span className="task-ngo">Posted by: {task.user_name}</span>
           <span className="task-date">Date: {task.date}</span>
         </div>
       </div>
@@ -24,8 +24,8 @@ export default function TaskCard({ task, onView }) {
           </div>
         </div>
         <button className="btn primary view-btn" onClick={onView}>
-          View Details
-        </button>
+           Volunteer
+         </button>
       </div>
     </div>
   );
